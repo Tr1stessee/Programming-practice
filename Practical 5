@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define module 12345
+
+void count(int n) //функція обрахунку
+{
+	int d0 = 2;//створення змінних де d0 - закінчується нулем, а d1 - закінчується одиницею
+	int d1 = 1;
+	for(int i = 2; i <= n; i++)
+	{
+
+		int nd0 = ((d0 + d1) % module); //послідовності довжиною i
+		int nd1 = d0;
+		d0 = nd0;
+		d1 = nd1;
+	}
+
+	printf("%d", (d0 + d1) % module);
+}
+int main(void)
+{ //створення змінної n 
+	int n = 0;
+	printf("Write n: ");
+	scanf("%d", &n);
+	printf("Result is: ");
+	count(n);
+	printf("\n");
+	system("pause");
+}
