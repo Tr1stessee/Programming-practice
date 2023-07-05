@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+//функція main
+int main() {
+    int t1, t2, t3; // ініціюємо змінні годин
+    printf("Write 3 arguments: ");//введення значень
+    scanf("%d", &t1);
+    scanf("%d", &t2);
+    scanf("%d", &t3);
+    float time = t1;//time присвоюється будь яка змінна t1,t2,t3
+    {
+        time = t2;//якщо t2 більше ніж time, то t2
+    }
+    if (t3 > time) //якщо t3 більше ніж time, то t3
+    {
+        time = t3;
+    }
+    time = time / 3.0;
+    printf("Time is %.2f hours\n", time);
+    return 0;
+}
