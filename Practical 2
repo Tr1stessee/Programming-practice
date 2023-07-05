@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int gcd(int a, int b)//знаходження НСД
+{
+    if(b == 0)
+    {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+int lcm(int a, int b) //знаходження НСК
+{
+    return (a * b) / gcd(a, b); //формула пошуку НСК
+}
+
+int numbers(int *arr, int n)
+{
+    int result = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        result = lcm(result, arr[i]);
+    }
+    return result;
+}
+
+int main(void)
+{
+    int n;
+    printf("Write number: ");// вводимо кількість чисел для пошуку НСК
+    scanf("%d", &n);
+    int array[n];
+    printf("Write numbers: \n");//вводимо числа
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &array[i]);
+    }
+
+    int result = numbers(array, n);
+    printf("NSK: %d\n", result);
+
+}
