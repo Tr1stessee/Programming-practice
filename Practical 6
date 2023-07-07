@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+    int x1, x2, y1, y2; //ініціюємо змінні
+    printf("Write 4 numbers (x1, y1, x2, y2): ");//введення значень
+    scanf("%d", &x1);
+    scanf("%d", &y1);
+    scanf("%d", &x2);
+    scanf("%d", &y2);
+    int result = x2 - x1 + y2 - y1; //формула пошуку довжини вектора
+    printf("Result is: %f\n", sqrt(result)); //виведення результату
+    return 0;
+}
