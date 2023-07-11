@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int minSteps(int x, int y) {
+    int diff = abs(y - x);
+    if (diff == 0) { //якщо різниця дорівнює 0 повертає 0
+        return 0;
+    }
+    int steps = 1;
+    diff--;//зменшує різницю на 1
+    while (diff != 0) {//поки різниця не дорівнює 0
+        if (diff == 1) { //якщо різниця дорівнює 1 зробити 1 крок
+            steps++;
+            break;
+        }
+        if (diff <= 3) { //якщо різниця менша або дорівнює 3 зробити 2 кроки
+            steps += 2;
+            break;
+        }
+        diff -= 3;
+        steps += 2;//додає 2 до лічильника кроків
+    }
+    return steps;
+}
+int main() {
+    int x, y;
+    printf("Enter the value x: ");
+    scanf("%d", &x);
+    printf("Enter the value y: ");
+    scanf("%d", &y);
+    int result = minSteps(x, y);
+    printf("Minimum number of steps: %d\n", result);
+    return 0;
+}
